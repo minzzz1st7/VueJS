@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>클릭 카운트 : {{count}}</h2>
+      <button @click="count++">카운트 증가</button>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        beforeCreate() {
+          console.log(" Beforecreate 호출!!!");
+          console.log("beforeCreate count : " + this.count);
+        },
+        created() {
+          console.log(" created 호출!!!");
+          console.log("Created count : " + this.count);
+          console.log("created el : ", this.$el);
+        },
+        beforeMount() {
+          console.log("beforemounted 호출 !! ");
+          console.log("beforeMount count : " + this.count);
+        },
+        mounted() {
+          console.log("mounted 호출 !! ");
+          console.log("mounted count : " + this.count);
+          console.log("created el : ", this.$el);
+        },
+        updated() {
+          console.log("updated 호출 !! ");
+        },
+        destroyed() {
+          console.log("destroyed 호출 !! ");
+        },
+      });
+    </script>
+  </body>
+</html>

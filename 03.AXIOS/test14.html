@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      const URL = "https://jsonplaceholder.typicode.com/todos";
+
+      //2. axios
+      axios
+        .get(URL)
+        .then((response) => {
+          console.log("4. ", response.data[4].id);
+          return response.data[4].id;
+        })
+        .then((id) => {
+          console.log("5. ", id);
+          return axios.get(`${URL}/${id}`);
+        })
+        .then((promise) => {
+          console.log("6. ", promise.data);
+          return promise.data;
+        })
+        .then((data) => {
+          console.log("7. ", data.userId);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
