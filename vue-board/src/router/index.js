@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
-import MainContent from "@/components/MainContent.vue";
 import BoardView from "@/views/BoardView.vue";
 import BoardWrite from "@/components/board/BoardWrite.vue";
 import BoardList from "@/components/board/BoardList.vue";
@@ -22,7 +21,7 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginView,
-  }, 
+  },
   {
     path: "/board",
     name: "board",
@@ -32,31 +31,30 @@ const routes = [
       {
         path: "/list",
         name: "list",
-        component: BoardList
+        component: BoardList,
       },
       {
         path: "/write",
         name: "write",
-        component: BoardWrite
+        component: BoardWrite,
       },
       {
         path: "/detail",
         name: "detail",
-        component: BoardDetail
+        component: BoardDetail,
       },
       {
         path: "/modify",
         name: "modify",
-        component: BoardModify
+        component: BoardModify,
       },
-      
+
       {
         path: "/delete",
         name: "delete",
-        component: BoardDelete
+        component: BoardDelete,
       },
-
-    ]
+    ],
   },
 ];
 

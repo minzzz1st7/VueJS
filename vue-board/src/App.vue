@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <header-nav></header-nav>
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,15 @@
     <router-view />
   </div>
 </template>
+
+<script>
+import HeaderNav from "@/components/HeaderNav.vue";
+
+export default {
+  name: "App",
+  components: { HeaderNav },
+};
+</script>
 
 <style>
 a {
@@ -89,5 +99,4 @@ button,
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
 </style>
